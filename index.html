@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Module HTML</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        .container {
+            width: 90%; /* Lebar responsif */
+            max-width: 700px; /* Maksimal lebar untuk laptop */
+            height: auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%; /* Tombol lebar penuh */
+            margin-top: 10px; /* Jarak antar tombol */
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .hide {
+            display: none;
+        }
+
+        /* Media query untuk perangkat dengan lebar maksimal 768px (tablet dan smartphone) */
+        @media (max-width: 768px) {
+            body {
+                padding: 10px; /* Padding untuk perangkat kecil */
+            }
+
+            .container {
+                padding: 15px; /* Padding yang lebih kecil */
+            }
+
+            button {
+                font-size: 14px; /* Ukuran font lebih kecil */
+            }
+        }
+
+        /* Media query untuk perangkat dengan lebar 769px ke atas (laptop) */
+        @media (min-width: 769px) {
+            button {
+                font-size: 18px; /* Ukuran font lebih besar untuk laptop */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container" id="welcomeContainer">
+        <h1>Hai Rahma!</h1>
+        <p>Selamat Datang</p>
+        <button onclick="start()">Mulai</button>
+    </div>
+
+    <div class="container hide" id="messageContainer">
+        <h1>Sudah Siap Belajar? >_<</h1>
+        <button onclick="showContent()">SIAP!</button>
+    </div>
+
+    <div class="container hide" id="content">
+        <div class="bagian1 active">
+            <h1>Rangkuman Modul HTML</h1>
+            <p>Apa itu HTML?</p>
+            <p>HTML (HyperText Markup Language) adalah bahasa markup yang digunakan untuk membuat struktur dan konten
+                halaman web. HTML memberikan kerangka dasar untuk menampilkan teks, gambar, tautan, dan elemen lainnya
+                di browser.</p>
+            <div class="button-container">
+                <button onclick="showNext(2)">Next</button>
+            </div>
+        </div>
+        
+        <div class="bagian2 hide">
+            <h1>Struktur Dasar HTML</h1>
+            <p>Setiap dokumen HTML dimulai dengan deklarasi tipe dokumen, diikuti oleh elemen dasar. Berikut adalah struktur sederhana:</p>
+            <p style="text-align: left;">
+&lt;!DOCTYPE html><br>
+&lt;html><br>
+    &lt;head><br>
+        &lt;title>Judul Halaman&lt;/title><br>
+    &lt;/head><br>
+    &lt;body><br>
+        &lt;h1>Selamat Datang di Website Saya&lt;/h1><br>
+        &lt;p>Ini adalah paragraf pertama saya.&lt;/p><br>
+    &lt;/body><br>
+&lt;/html></p>
+            <div class="button-container">
+                <button onclick="showPrevious(1)">Previous</button>
+                <button onclick="showNext(3)">Next</button>
+            </div>
+        </div>
+        
+        <div class="bagian3 hide">
+            <h1>Pengenalan 10 Tag HTML Dasar</h1>
+            <ol style="text-align: left;">
+                <li><strong>&lt;html></strong>: <mark>Elemen utama</mark> yang menandai awal dan akhir dokumen HTML.</li>
+                <li><strong>&lt;head></strong>: Bagian yang <mark>berisi informasi tentang dokumen</mark>, seperti judul dan meta data.</li>
+                <li><strong>&lt;title></strong>: <mark>Menentukan judul halaman</mark> yang muncul di tab browser.</li>
+                <li><strong>&lt;body></strong>: Bagian utama dari halaman yang <mark>berisi konten yang terlihat oleh pengguna</mark>.</li>
+                <li><strong>&lt;h1></strong> hingga <strong>&lt;h6></strong>: Tag <mark>untuk judul</mark>, dengan &lt;h1> sebagai yang paling penting dan &lt;h6> sebagai yang paling sedikit penting.</li>
+                <li><strong>&lt;p></strong>: Digunakan untuk <mark>membuat paragraf</mark>.</li>
+                <li><strong>&lt;a></strong>: Tag untuk <mark>membuat tautan</mark> (hyperlink). Contoh: &lt;a href="https://www.example.com">Kunjungi Example&lt;/a>.</li>
+                <li><strong>&lt;img></strong>: Untuk <mark>menyisipkan gambar</mark>. Contoh: &lt;img src="gambar.jpg" alt="Deskripsi Gambar">.</li>
+                <li><strong>&lt;ul></strong> dan <strong>&lt;li></strong>: Untuk <mark>membuat daftar tidak terurut</mark>. Contoh :<br>&lt;ul><br>
+                    &lt;li>Item pertama&lt;/li><br>
+                    &lt;li>Item kedua&lt;/li><br>
+                &lt;/ul></li>
+                <li><strong>&lt;div></strong>: Elemen blok yang digunakan untuk <mark>mengelompokkan konten</mark> dan mengatur layout.</li>
+            </ol>
+            <div class="button-container">
+                <button onclick="showPrevious(2)">Previous</button>
+                <button onclick="showNext(4)">Next</button>
+            </div>
+        </div>
+
+        <div class="bagian4 hide">
+            <h1>Rangkuman Modul HTML</h1>
+            <p>HTML adalah bahasa markup yang digunakan untuk membuat struktur halaman web.</p>
+            <div class="button-container">
+                <button onclick="showPrevious(3)">Previous</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function start() {
+            document.getElementById('welcomeContainer').style.display = 'none';
+            document.getElementById('messageContainer').style.display = 'block';
+        }
+
+        function showContent() {
+            document.getElementById('messageContainer').style.display = 'none';
+            document.getElementById('content').style.display = 'block';
+            document.title = "Selamat Belajar Rahma >_<";
+        }
+
+        function showNext(bagian) {
+            const current = document.querySelector('.bagian1.active, .bagian2.active, .bagian3.active, .bagian4.active');
+            if (current) {
+                current.classList.remove('active');
+                current.classList.add('hide');
+            }
+            document.querySelector('.bagian' + bagian).classList.remove('hide');
+            document.querySelector('.bagian' + bagian).classList.add('active');
+        }
+
+        function showPrevious(bagian) {
+            const current = document.querySelector('.bagian1.active, .bagian2.active, .bagian3.active, .bagian4.active');
+            if (current) {
+                current.classList.remove('active');
+                current.classList.add('hide');
+            }
+            document.querySelector('.bagian' + bagian).classList.remove('hide');
+            document.querySelector('.bagian' + bagian).classList.add('active');
+        }
+    </script>
+
+</body>
+</html>
